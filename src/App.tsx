@@ -31,7 +31,7 @@ interface State {
 type CurrentPage = "landing" | "create" | "result";
 
 // Configuration - update this with your API base URL
-const API_BASE_URL = "http://localhost:8082"; // Change to your API URL
+const API_BASE_URL = "https://luminai-0km6.onrender.com"; // Change to your API URL
 
 const App: FC = () => {
   const [currentPage, setCurrentPage] = useState<CurrentPage>("landing");
@@ -70,7 +70,7 @@ const App: FC = () => {
           setTimeout(async () => {
             try {
               const videoResponse = await fetch(
-                `http://localhost:8082/api/upload/video/${batchId}`
+                `https://luminai-0km6.onrender.com/api/upload/video/${batchId}`
               );
               if (videoResponse.ok) {
                 const videoBlob = await videoResponse.blob();
